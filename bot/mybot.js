@@ -245,7 +245,7 @@ async function on_registry_event(req, res) {
       return ev.action == 'push' &&
         ev.target.mediaType == 'application/vnd.docker.distribution.manifest.v2+json' &&
         ev.target.repository == 'myapp' &&
-        typeof ev.target.repository == 'string';
+        typeof ev.target.tag == 'string';
     } catch (_) {
       return false;
     }
